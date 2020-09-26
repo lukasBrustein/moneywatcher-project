@@ -1,44 +1,49 @@
-import React from 'react';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import Drawer from '@material-ui/core/Drawer';
-import Divider from '@material-ui/core/Divider';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import PieChartOutlinedIcon from '@material-ui/icons/PieChartOutlined';
-import TimelineOutlinedIcon from '@material-ui/icons/TimelineOutlined';
-import AttachMoneyOutlinedIcon from '@material-ui/icons/AttachMoneyOutlined';
+import React from "react";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import Nav from 'react-bootstrap/Nav';
+import classes from './Sidenav.css';
+import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
+import  Button  from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
 
-const sidenav = (props) => (
-    <div>
-         <Drawer
-        variant="permanent"
-        anchor="left"
-      >
- 
-        <Divider />
-        <List style={{marginTop: '30%'}}>
-            <Divider />
-            <ListItem button>
-                <ListItemIcon>
-                    <PieChartOutlinedIcon />
-                </ListItemIcon>
-                <ListItemText primary="Dashboard" />
-            </ListItem>
-            <ListItem button>
-                <ListItemIcon>
-                    <AttachMoneyOutlinedIcon />
-                </ListItemIcon>
-                <ListItemText primary="Kontodaten" />
-            </ListItem>
-            <ListItem button>
-                <ListItemIcon>
-                    <TimelineOutlinedIcon />
-                </ListItemIcon>
-                <ListItemText primary="Historie" />
-            </ListItem>
-        </List>
-        </Drawer>
+function changeColor(e) {
+    e.target.style.color = 'blue';
+}
+function changeColorBack(e) {
+    e.target.style.color = 'grey';
+}
+
+const sidenav = () => (
+    <div className="sidenav">
+    <List disablePadding dense className="list" style={{marginTop: "5vh", marginLeft: "0.5vw"}}>
+        <ListItem>
+            <Nav.Link href="/home">
+            <Button onMouseOver={changeColor} onMouseOut={changeColorBack}>
+            <ListItemText className="list-text">Dashboard</ListItemText>
+            <KeyboardArrowRightIcon style={{color: 'grey'}}/>
+            </Button>
+            </Nav.Link>
+        </ListItem>
+        <ListItem>
+            <Nav.Link href="/kontodaten">
+        <Button  onMouseOver={changeColor} onMouseOut={changeColorBack}>
+            <ListItemText className="list-text">Kontodaten</ListItemText>
+            <KeyboardArrowRightIcon style={{color: 'grey'}}/>
+            </Button>
+            </Nav.Link>
+        </ListItem>
+        <ListItem>
+            <Nav.Link href="/historie">
+            <Button  onMouseOver={changeColor} onMouseOut={changeColorBack}>
+            <ListItemText className="list-text">Historie</ListItemText>
+            <KeyboardArrowRightIcon style={{color: 'grey'}}/>
+            </Button>
+            </Nav.Link>
+        </ListItem>
+    </List>
     </div>
-)
+);
+
 export default sidenav;
