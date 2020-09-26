@@ -1,13 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Toolbar from './components/Navigation/Toolbar/Toolbar';
-import Sidenav from './components/Navigation/Sidenav/Sidenav';
+import Layout from './../src/hoc/Layout/Layout';
 
 function App() {
   return (
-    <Toolbar />
+    <Layout />
   );
 }
 
