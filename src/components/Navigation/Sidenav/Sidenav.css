@@ -1,0 +1,12 @@
+.sidenav {
+    max-width: 13%;
+    height: 30vh;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.list-text {
+    color: grey;
+}
+
+
