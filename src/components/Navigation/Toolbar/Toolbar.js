@@ -9,12 +9,13 @@ import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined'
 import IconButton from '@material-ui/core/IconButton';
 import CalendarTodayOutlinedIcon from '@material-ui/icons/CalendarTodayOutlined';
 import PowerSettingsNewOutlinedIcon from '@material-ui/icons/PowerSettingsNewOutlined';
+import classes from './Toolbar.css';
 
 
 
-const toolbar = (props) => (
-    <header>
-        <Navbar bg="light" expand="lg">
+const toolbar = () => (
+    <header className="toolbar">
+        <Navbar bg="" expand="lg">
   <Navbar.Brand href="./home" style={{fontFamily: 'Helvetica'}}>MoneyWatcher</Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
