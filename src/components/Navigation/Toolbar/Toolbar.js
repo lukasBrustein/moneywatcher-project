@@ -1,50 +1,36 @@
-import React from 'react';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+import React from "react";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import MailIcon from '@material-ui/icons/Mail';
+import MenuIcon from "@material-ui/icons/Menu";
+import NotificationsIcon from '@material-ui/icons/Notifications';
+import Divider from '@material-ui/core/Divider';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import{ NavLink } from 'react-router-dom';
-import  Button  from '@material-ui/core/Button';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
-import IconButton from '@material-ui/core/IconButton';
-import CalendarTodayOutlinedIcon from '@material-ui/icons/CalendarTodayOutlined';
-import PowerSettingsNewOutlinedIcon from '@material-ui/icons/PowerSettingsNewOutlined';
+import Dropdown from 'react-bootstrap/Dropdown';
 import classes from './Toolbar.css';
 
-
-
 const toolbar = () => (
-    <header className="toolbar">
-        <Navbar bg="" expand="lg">
-  <Navbar.Brand href="./home" style={{fontFamily: 'Helvetica'}}>MoneyWatcher</Navbar.Brand>
-  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-  <Navbar.Collapse id="basic-navbar-nav">
-    <Nav className="mr-auto">
-      <Nav.Link href="#header"></Nav.Link>
-    </Nav>
-    <Nav.Link href="/notifications">
-      <IconButton color="primary">
-            <NotificationsOutlinedIcon/>
-      </IconButton>
-    </Nav.Link>
-    <Nav.Link href="/calendar">
-      <IconButton color="primary">
-        <CalendarTodayOutlinedIcon />
-      </IconButton>
-    </Nav.Link>
-    <Button color="primary">
-      <NavDropdown title="Lukas Brustein" id="basic-nav-dropdown" style={{fontFamily: 'Helvetica'}}>
-        <Nav.Link href="/profile">
-           <NavDropdown.Item as= {Button}><AccountCircleIcon/>Profil</NavDropdown.Item>
-        </Nav.Link>
-        <NavDropdown.Divider />
-        <NavDropdown.Item as= {Button}><PowerSettingsNewOutlinedIcon />Logout</NavDropdown.Item>
-      </NavDropdown>
-      </Button>
-     
-  </Navbar.Collapse>
-  
-</Navbar>
-    </header>
+  <div>
+    <AppBar position="static" style={{maxWidth:"100%"}}>
+      <Toolbar>
+        <h4 style={{fontFamily:"Arial"}}>MoneyWatcher</h4>
+        <IconButton color="inherit" style={{marginLeft: '60vw', marginRight: '2vw'}}>
+          <MailIcon/>
+        </IconButton>
+        <IconButton color="inherit" style={{marginRight: '2vw'}}>
+          <NotificationsIcon />
+        </IconButton>
+        <Button>
+        <NavDropdown title="Lukas Brustein" id="nav-dropdown">
+          <NavDropdown.Item>Profil</NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item>Logout</NavDropdown.Item>
+        </NavDropdown>
+        </Button>
+      </Toolbar>
+    </AppBar>
+  </div>
 )
 export default toolbar;
