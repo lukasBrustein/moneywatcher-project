@@ -16,8 +16,8 @@ function changeColorBack(e) {
 }
 
 const sidenav = () => (
-    <div className="sidenav">
-    <List disablePadding dense className="list" style={{marginTop: "5vh", marginLeft: "0.5vw"}}>
+    <div className="sidenav" style={{marginTop:"-4.7vh"}}>
+    <List disablePadding dense className="list" style={{marginTop: "5vh"}}>
         <ListItem>
             <Nav.Link href="/home">
             <Button onMouseOver={changeColor} onMouseOut={changeColorBack}>
